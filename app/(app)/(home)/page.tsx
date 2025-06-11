@@ -14,10 +14,10 @@ export default function HomePage() {
   return <div className="relative w-full h-full">
     <WlModal showTrigger={false} isOpen={isOpen} onOpenChange={toggleModal} />
     <div className="absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-b from-transparent to-black z-10"></div>
-    <div className="w-full h-full bg-[url('/images/background.png')] bg-cover bg-center">
+    <div className="w-full h-full bg-[url('/images/background.png')] bg-cover bg-top">
     </div>
 
-    <div className="absolute top-3 bg-[#111]/50 backdrop-blur-md rounded-full p-5 px-8 w-[98%] left-1/2 transform -translate-x-1/2 z-50">
+    <div className="absolute top-3 bg-[#222]/50 backdrop-blur-md rounded-full p-4 px-8 w-[98%] left-1/2 transform -translate-x-1/2 z-50">
       <div className="flex items-center justify-between text-white font-hanson">
         <div className="flex items-center gap-8">
           <div>
@@ -27,7 +27,7 @@ export default function HomePage() {
               place="top-end"
               style={{ background: 'none' }}
             >
-              <div className="bg-[#111]/70 backdrop-blur-md rounded-full p-5 px-8 mt-2 font-aesthetic text-[32px]">
+              <div className="bg-[#222]/50 backdrop-blur-md rounded-full p-4 px-8 mt-2 font-aesthetic text-[32px]">
                 InterGods is all about interwoven together.
               </div>
             </Tooltip>
@@ -39,7 +39,7 @@ export default function HomePage() {
               place="top-end"
               style={{ background: 'none' }}
             >
-              <div className="bg-[#111]/70 backdrop-blur-md rounded-full p-5 px-8 mt-2 font-aesthetic text-[32px]">
+              <div className="bg-[#222]/50 backdrop-blur-md rounded-full p-4 px-8 mt-2 font-aesthetic text-[32px]">
                 Stake on Odds Garden to earn $GODS and join activity.
               </div>
             </Tooltip>
@@ -53,7 +53,7 @@ export default function HomePage() {
             place="top-end"
             style={{ background: 'none' }}
           >
-            <div className="bg-[#111]/70 backdrop-blur-md rounded-full p-5 px-8 mt-2 font-aesthetic text-[32px]">
+            <div className="bg-[#222]/50 backdrop-blur-md rounded-full p-4 px-8 mt-2 font-aesthetic text-[32px]">
               YOU ARE STILL EARLY
             </div>
           </Tooltip>
@@ -64,9 +64,9 @@ export default function HomePage() {
     <div className="absolute left-0 bottom-0 right-0 z-10 py-4">
       <Marquee speed={100}>
         {
-          Array.from({ length: 15 }, (_, i) => i + 1).map(() => {
+          Array.from({ length: 15 }, (_, i) => i + 1).map((i) => {
             return (
-              <div className="mx-1 flex items-center gap-2">
+              <div key={i} className="mx-1 flex items-center gap-2">
                 <MoveRight size={16} />
                 <span className="font-bold font-hanson">Mint on Intergaze 25/05/2025</span>
               </div>

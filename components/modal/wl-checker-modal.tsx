@@ -145,7 +145,7 @@ export default function WlModal({
           </DialogTrigger>
         )}
         <DialogContent className="max-w-[90%] rounded-[50px] p-0 sm:max-w-[750px]">
-          <div className="md:px-34 flex flex-col items-center justify-center rounded-[50px] bg-[#111]/50 backdrop-blur-md p-8 px-10 md:px-24 md:p-16 md:pb-28">
+          <div className="md:px-34 flex flex-col items-center justify-center rounded-[50px] bg-[#222]/50 backdrop-blur-md p-8 px-10 md:px-24 md:p-16 md:pb-28">
             <span className="font-hanson">
               Whitelist checker
             </span>
