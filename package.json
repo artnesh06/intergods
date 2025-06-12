@@ -65,7 +65,7 @@
     "embla-carousel-react": "^8.3.0",
     "eslint": "8.48.0",
     "eslint-config-next": "^14.0.1",
-    "framer-motion": "^12.4.10",
+    "framer-motion": "^12.17.3",
     "gsap": "^3.12.7",
     "lucide-react": "^0.291.0",
     "moment": "^2.30.1",

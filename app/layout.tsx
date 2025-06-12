@@ -9,30 +9,30 @@ import { auth } from '@/auth';
 
 const inter = Inter({ subsets: ['latin'] });
 export const metadata = {
-  title: 'Hyper Wizard',
+  title: 'InterGods',
   description:
-    '2500 unique collectible characters with proof of ownership stored on the Hyperliquid blockchain, powered by LiquidFi. Each wizard is individually generated, ensuring no two are exactly alike, and can be collected by anyone interacting with the EVM.',
+    'InterGods is all about interwoven together.',
   openGraph: {
     type: 'website',
-    url: 'https://upri.world',
-    title: 'Hyper Wizard',
+    url: 'https://intergods.vercel.app',
+    title: 'InterGods',
     description:
-      '2500 unique collectible characters with proof of ownership stored on the Hyperliquid blockchain, powered by LiquidFi. Each wizard is individually generated, ensuring no two are exactly alike, and can be collected by anyone interacting with the EVM.',
+      'InterGods is all about interwoven together.',
     images: [
       {
-        url: 'https://upri.world/images/thumbnail.webp',
+        url: 'https://intergods.vercel.app/images/Embed.webp',
         width: 1200,
         height: 630,
-        alt: 'Hyper Wizard Share Image'
+        alt: 'InterGods Share Image'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hyper Wizard',
+    title: 'InterGods',
     description:
-      '2500 unique collectible characters with proof of ownership stored on the Hyperliquid blockchain, powered by LiquidFi. Each wizard is individually generated, ensuring no two are exactly alike, and can be collected by anyone interacting with the EVM.',
-    images: ['https://upri.world/images/thumbnail.webp']
+      'InterGods is all about interwoven together.',
+    images: ['https://intergods.vercel.app/images/Embed.webp']
   }
 };
 

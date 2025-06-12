@@ -146,15 +146,21 @@ export default function WlModal({
         )}
         <DialogContent className="max-w-[90%] rounded-[50px] p-0 sm:max-w-[750px]">
           <div className="md:px-34 flex flex-col items-center justify-center rounded-[50px] bg-[#222]/50 backdrop-blur-md p-8 px-10 md:px-24 md:p-16 md:pb-28">
-            <span className="font-hanson">
+            <span className="text-lg font-hanson text-[#F2FF7F]">
               Whitelist checker
             </span>
-            <span className="mt-2 mb-6 font-hanson">
+            <div className="hidden md:!block text-lg mt-2 mb-6 font-hanson text-center">
               Enter you address here
-            </span>
+            </div>
+            <div className="md:!hidden text-lg mt-2 font-hanson text-center">
+              Enter you
+            </div>
+            <div className="md:!hidden text-lg mb-6 font-hanson text-center">
+              address here
+            </div>
 
             <Input
-              className="border-none bg-white rounded-full text-center text-lg text-gray-500 font-bold font-hanson"
+              className="border-none bg-[#616161] rounded-full text-center text-lg text-[#C3C3C3] font-bold font-hanson"
               placeholder="0x..."
               value={address}
               onChange={(e) => setAddress(e.target.value)}
