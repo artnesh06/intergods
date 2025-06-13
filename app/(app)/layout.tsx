@@ -6,13 +6,13 @@ export const metadata = {
     'InterGods is all about interwoven together.',
   openGraph: {
     type: 'website',
-    url: 'https://intergods.vercel.app',
+    url: 'https://intergods.xyz',
     title: 'InterGods',
     description:
       'InterGods is all about interwoven together.',
     images: [
       {
-        url: 'https://intergods.vercel.app/images/Embed.webp',
+        url: 'https://intergods.xyz/images/Embed.webp',
         width: 1200,
         height: 630,
         alt: 'InterGods Share Image'
@@ -24,7 +24,7 @@ export const metadata = {
     title: 'InterGods',
     description:
       'InterGods is all about interwoven together.',
-    images: ['https://intergods.vercel.app/images/Embed.webp']
+    images: ['https://intergods.xyz/images/Embed.webp']
   }
 };
 
