@@ -161,7 +161,7 @@ export default function WlModal({
 
             <Input
               className="border-none bg-[#616161] rounded-full text-center text-lg text-[#C3C3C3] font-bold font-hanson"
-              placeholder="0x..."
+              placeholder="0x/init1.."
               value={address}
               onChange={(e) => setAddress(e.target.value)}
             />
