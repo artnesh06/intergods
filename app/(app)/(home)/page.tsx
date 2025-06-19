@@ -66,7 +66,7 @@ export default function HomePage() {
         </div>
         <div className="hidden md:!block group group-mint">
           <a
-            href="https://intergaze.xyz"
+            href="https://intergaze.xyz" target="_blank"
             data-tooltip-id="mint-tooltip"
             className="flex items-center gap-2"
             onMouseEnter={() => showTooltip('mint')}
