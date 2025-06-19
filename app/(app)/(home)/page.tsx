@@ -9,20 +9,45 @@ import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
 import { Particles } from "@/components/magicui/particles";
+import CircularGallery from "@/components/circular-gallery";
+import { useEffect, useState } from "react";
 
 export default function HomePage() {
 
   const { isOpen, openModal, toggleModal } = useWlModal();
   const { showTooltip, hideTooltip, isTooltipActive } = useTooltip();
+  const [collection, setCollection] = useState<{ image: string; text: string }[]>([]);
+
+  // Fetch wizard files
+  useEffect(() => {
+    const fetchWizardFiles = async () => {
+      try {
+        const response = await fetch('/api/collection');
+        const data = await response.json();
+        setCollection(data.files.map((item: string) => {
+          return {
+            image: "/images/collection/" + item,
+            text: item.split('.')[0] // Using filename without extension as text
+          }
+        }));
+      } catch (error) {
+        console.error('Error fetching wizard files:', error);
+      } finally {
+        // setIsLoading(false);
+      }
+    };
+
+    fetchWizardFiles();
+  }, []);
 
   return <div className="relative w-full h-full">
     <Particles
-        className="absolute inset-0 z-[9999]"
-        quantity={100}
-        ease={80}
-        color={"#ffffff"}
-        refresh
-      />
+      className="absolute inset-0 z-[9999]"
+      quantity={100}
+      ease={80}
+      color={"#ffffff"}
+      refresh
+    />
     <SmoothCursor />
     <WlModal showTrigger={false} isOpen={isOpen} onOpenChange={toggleModal} />
     <div className="absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-b from-transparent to-black z-10"></div>
@@ -75,6 +100,20 @@ export default function HomePage() {
             Mint Now <MoveRight size={16} />
           </a>
         </div>
+      </div>
+    </div>
+
+    <div className="absolute left-0 -bottom-16 right-0 z-10 py-4">
+      <div style={{ height: '350px', position: 'relative' }}>
+        <CircularGallery
+          items={collection}
+          imageWidth={450}      // Lebar image
+          imageHeight={450}     // Tinggi image  
+          imageSpacing={175}     // Jarak antar image (semakin kecil = semakin rapat)
+          bend={0}              // Tingkat lengkungan
+          borderRadius={0.05}   // Sudut membulat
+          showTitles={false}    // Tampilkan/sembunyikan title
+        />
       </div>
     </div>
 

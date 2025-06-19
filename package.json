@@ -74,6 +74,7 @@
     "next-themes": "^0.2.1",
     "nextjs-toploader": "^1.6.12",
     "node-youtube-music": "^0.10.3",
+    "ogl": "^1.0.11",
     "pino-pretty": "^11.2.2",
     "postcss": "8.4.28",
     "react": "^18.2.0",

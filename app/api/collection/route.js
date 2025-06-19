@@ -6,7 +6,7 @@ import fs from 'fs/promises';
 export async function GET() {
   try {
     // Path to the wizard images directory
-    const wizardDir = path.join(process.cwd(), 'public', 'images', 'wizards');
+    const wizardDir = path.join(process.cwd(), 'public', 'images', 'collection');
 
     // Read all files in the directory
     const files = await fs.readdir(wizardDir);
@@ -17,13 +17,6 @@ export async function GET() {
       return ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg'].includes(
         extension
       );
-    });
-
-    // Sort files naturally (so "10" comes after "9" instead of after "1")
-    imageFiles.sort((a, b) => {
-      const numA = parseInt(a.match(/\d+/) || '0');
-      const numB = parseInt(b.match(/\d+/) || '0');
-      return numA - numB;
     });
 
     return NextResponse.json({ files: imageFiles });
