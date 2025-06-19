@@ -98,7 +98,7 @@ export default function HomePage() {
     <div className={`text-nowrap absolute top-20 left-1/2 transform w-[95%] transition-all duration-100 pointer-events-none transform -translate-x-1/2 ${isTooltipActive('mint') ? 'opacity-100 visible' : 'opacity-0 invisible'
       }`}>
       <div className="bg-[#222]/50 backdrop-blur-lg max-w-max rounded-full p-4 px-8 font-hanson text-white float-end">
-        You're still early
+        You&apos;re still early
       </div>
     </div>
 
