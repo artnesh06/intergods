@@ -3,7 +3,7 @@
 import WlModal from "@/components/modal/wl-checker-modal";
 import { useWlModal } from "@/hooks/useWlModal";
 import { useTooltip } from "@/hooks/useTooltip";
-import { MoveRight } from "lucide-react";
+import { MoveRight, Loader2 } from "lucide-react";
 import Marquee from "react-fast-marquee";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
@@ -17,11 +17,13 @@ export default function HomePage() {
   const { isOpen, openModal, toggleModal } = useWlModal();
   const { showTooltip, hideTooltip, isTooltipActive } = useTooltip();
   const [collection, setCollection] = useState<{ image: string; text: string }[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Fetch wizard files
   useEffect(() => {
     const fetchWizardFiles = async () => {
       try {
+        setIsLoading(true);
         const response = await fetch('/api/collection');
         const data = await response.json();
         setCollection(data.files.map((item: string) => {
@@ -33,7 +35,7 @@ export default function HomePage() {
       } catch (error) {
         console.error('Error fetching wizard files:', error);
       } finally {
-        // setIsLoading(false);
+        setIsLoading(false);
       }
     };
 
@@ -103,17 +105,29 @@ export default function HomePage() {
       </div>
     </div>
 
-    <div className="absolute left-0 -bottom-16 right-0 z-10 py-4">
+    <div className="absolute left-0 bottom-10 right-0 z-10 py-4">
       <div style={{ height: '350px', position: 'relative' }}>
-        <CircularGallery
-          items={collection}
-          imageWidth={450}      // Lebar image
-          imageHeight={450}     // Tinggi image  
-          imageSpacing={175}     // Jarak antar image (semakin kecil = semakin rapat)
-          bend={0}              // Tingkat lengkungan
-          borderRadius={0.05}   // Sudut membulat
-          showTitles={false}    // Tampilkan/sembunyikan title
-        />
+        {isLoading ? (
+          <div className="flex items-center justify-center h-full">
+            <div className="flex flex-col items-center gap-4">
+              <Loader2 className="w-8 h-8 animate-spin text-white" />
+              <span className="text-white font-hanson text-sm opacity-70">
+                Loading collection...
+              </span>
+            </div>
+          </div>
+        ) : (
+          <CircularGallery
+            items={collection}
+            imageWidth={350}      // Lebar image
+            imageHeight={350}     // Tinggi image  
+            imageSpacing={100}     // Jarak antar image (semakin kecil = semakin rapat)
+            bend={0}              // Tingkat lengkungan
+            borderRadius={0.05}   // Sudut membulat
+            showTitles={false}    // Tampilkan/sembunyikan title
+            placeholderImage="https://static.wixstatic.com/media/a5e3bd_4541c740104f4dab8f618d7896859a34~mv2.webp/v1/fill/w_420,h_378,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-i.webp"
+          />
+        )}
       </div>
     </div>
 
