@@ -66,7 +66,7 @@ export default function HomePage() {
         </div>
         <div className="hidden md:!block group group-mint">
           <a
-            href="#"
+            href="https://intergaze.xyz"
             data-tooltip-id="mint-tooltip"
             className="flex items-center gap-2"
             onMouseEnter={() => showTooltip('mint')}
@@ -82,7 +82,7 @@ export default function HomePage() {
     <div className={`text-nowrap absolute top-20 left-1/2 transform w-[95%] transition-all duration-100 pointer-events-none transform -translate-x-1/2 ${isTooltipActive('intergods') ? 'opacity-100 visible' : 'opacity-0 invisible'
       }`}>
       <div className="bg-[#222]/50 backdrop-blur-md max-w-max rounded-full p-4 px-8 font-hanson text-white">
-        InterGods is all about interwoven together.
+        In InterGods, all things are interwoven.
       </div>
     </div>
 
@@ -90,7 +90,7 @@ export default function HomePage() {
     <div className={`text-nowrap absolute top-20 left-1/2 transform w-[95%] transition-all duration-100 pointer-events-none transform -translate-x-1/2 ${isTooltipActive('stake') ? 'opacity-100 visible' : 'opacity-0 invisible'
       }`}>
       <div className="bg-[#222]/50 backdrop-blur-md max-w-max rounded-full p-4 px-8 font-hanson text-white">
-        Stake on Odds Garden to earn $GODS and join activity.
+        Stake in Odds Garden to earn $GOD and join the activity.
       </div>
     </div>
 
@@ -98,7 +98,7 @@ export default function HomePage() {
     <div className={`text-nowrap absolute top-20 left-1/2 transform w-[95%] transition-all duration-100 pointer-events-none transform -translate-x-1/2 ${isTooltipActive('mint') ? 'opacity-100 visible' : 'opacity-0 invisible'
       }`}>
       <div className="bg-[#222]/50 backdrop-blur-lg max-w-max rounded-full p-4 px-8 font-hanson text-white float-end">
-        YOU ARE STILL EARLY
+        You're still early
       </div>
     </div>
 

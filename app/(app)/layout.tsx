@@ -3,13 +3,13 @@ import type { ReactNode } from 'react';
 export const metadata = {
   title: 'InterGods',
   description:
-    'InterGods is all about interwoven together.',
+    'In InterGods, all things are interwoven.',
   openGraph: {
     type: 'website',
     url: 'https://intergods.xyz',
     title: 'InterGods',
     description:
-      'InterGods is all about interwoven together.',
+      'In InterGods, all things are interwoven.',
     images: [
       {
         url: 'https://intergods.xyz/images/Embed.webp',
@@ -23,7 +23,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'InterGods',
     description:
-      'InterGods is all about interwoven together.',
+      'In InterGods, all things are interwoven.',
     images: ['https://intergods.xyz/images/Embed.webp']
   }
 };
