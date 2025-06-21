@@ -79,7 +79,7 @@ class ImageTrailVariant1 {
   constructor(container: HTMLDivElement) {
     this.container = container;
     this.DOM = { el: container };
-    this.images = [...container.querySelectorAll(".content__img")].map(
+    this.images = Array.from(container.querySelectorAll(".content__img")).map(
       (img) => new ImageItem(img as HTMLDivElement)
     );
     this.imagesTotal = this.images.length;
@@ -197,7 +197,7 @@ class ImageTrailVariant2 {
   constructor(container: HTMLDivElement) {
     this.container = container;
     this.DOM = { el: container };
-    this.images = [...container.querySelectorAll(".content__img")].map(
+    this.images = Array.from(container.querySelectorAll(".content__img")).map(
       (img) => new ImageItem(img as HTMLDivElement)
     );
     this.imagesTotal = this.images.length;
@@ -327,7 +327,7 @@ class ImageTrailVariant3 {
   constructor(container: HTMLDivElement) {
     this.container = container;
     this.DOM = { el: container };
-    this.images = [...container.querySelectorAll(".content__img")].map(
+    this.images = Array.from(container.querySelectorAll(".content__img")).map(
       (img) => new ImageItem(img as HTMLDivElement)
     );
     this.imagesTotal = this.images.length;
@@ -460,7 +460,7 @@ class ImageTrailVariant4 {
   constructor(container: HTMLDivElement) {
     this.container = container;
     this.DOM = { el: container };
-    this.images = [...container.querySelectorAll(".content__img")].map(
+    this.images = Array.from(container.querySelectorAll(".content__img")).map(
       (img) => new ImageItem(img as HTMLDivElement)
     );
     this.imagesTotal = this.images.length;
@@ -614,7 +614,7 @@ class ImageTrailVariant5 {
   constructor(container: HTMLDivElement) {
     this.container = container;
     this.DOM = { el: container };
-    this.images = [...container.querySelectorAll(".content__img")].map(
+    this.images = Array.from(container.querySelectorAll(".content__img")).map(
       (img) => new ImageItem(img as HTMLDivElement)
     );
     this.imagesTotal = this.images.length;
@@ -758,7 +758,7 @@ class ImageTrailVariant6 {
   constructor(container: HTMLDivElement) {
     this.container = container;
     this.DOM = { el: container };
-    this.images = [...container.querySelectorAll(".content__img")].map(
+    this.images = Array.from(container.querySelectorAll(".content__img")).map(
       (img) => new ImageItem(img as HTMLDivElement)
     );
     this.imagesTotal = this.images.length;
@@ -928,7 +928,7 @@ class ImageTrailVariant7 {
   constructor(container: HTMLDivElement) {
     this.container = container;
     this.DOM = { el: container };
-    this.images = [...container.querySelectorAll(".content__img")].map(
+    this.images = Array.from(container.querySelectorAll(".content__img")).map(
       (img) => new ImageItem(img as HTMLDivElement)
     );
     this.imagesTotal = this.images.length;
@@ -1068,7 +1068,7 @@ class ImageTrailVariant8 {
   constructor(container: HTMLDivElement) {
     this.container = container;
     this.DOM = { el: container };
-    this.images = [...container.querySelectorAll(".content__img")].map(
+    this.images = Array.from(container.querySelectorAll(".content__img")).map(
       (img) => new ImageItem(img as HTMLDivElement)
     );
     this.imagesTotal = this.images.length;
