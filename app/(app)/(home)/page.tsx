@@ -105,8 +105,8 @@ export default function HomePage() {
       </div>
     </div>
 
-    <div className="absolute left-0 bottom-10 right-0 z-10 py-4">
-      <div style={{ height: '350px', position: 'relative' }}>
+    {/* <div className="absolute left-0 bottom-10 right-0 z-10 py-4"> */}
+      {/* <div style={{ height: '350px', position: 'relative' }}>
         {isLoading ? (
           <div className="flex items-center justify-center h-full">
             <div className="flex flex-col items-center gap-4">
@@ -128,8 +128,8 @@ export default function HomePage() {
             placeholderImage="https://static.wixstatic.com/media/a5e3bd_4541c740104f4dab8f618d7896859a34~mv2.webp/v1/fill/w_420,h_378,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-i.webp"
           />
         )}
-      </div>
-    </div>
+      </div> */}
+    {/* </div> */}
 
     {/* Intergods Tooltip */}
     <div className={`text-nowrap absolute top-20 left-1/2 transform w-[95%] transition-all duration-100 pointer-events-none transform -translate-x-1/2 ${isTooltipActive('intergods') ? 'opacity-100 visible' : 'opacity-0 invisible'
