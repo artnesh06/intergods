@@ -11,12 +11,13 @@ import { SmoothCursor } from "@/components/ui/smooth-cursor";
 import { Particles } from "@/components/magicui/particles";
 import CircularGallery from "@/components/circular-gallery";
 import { useEffect, useState } from "react";
+import ImageTrail from "@/components/ImageTrail";
 
 export default function HomePage() {
 
   const { isOpen, openModal, toggleModal } = useWlModal();
   const { showTooltip, hideTooltip, isTooltipActive } = useTooltip();
-  const [collection, setCollection] = useState<{ image: string; text: string }[]>([]);
+  const [collection, setCollection] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   // Fetch wizard files
@@ -26,11 +27,9 @@ export default function HomePage() {
         setIsLoading(true);
         const response = await fetch('/api/collection');
         const data = await response.json();
+        // setCollection(data.files);
         setCollection(data.files.map((item: string) => {
-          return {
-            image: "/images/collection/" + item,
-            text: item.split('.')[0] // Using filename without extension as text
-          }
+          return "/images/collection/" + item;
         }));
       } catch (error) {
         console.error('Error fetching wizard files:', error);
@@ -105,8 +104,8 @@ export default function HomePage() {
       </div>
     </div>
 
-    {/* <div className="absolute left-0 bottom-10 right-0 z-10 py-4"> */}
-      {/* <div style={{ height: '350px', position: 'relative' }}>
+    <div className="absolute left-0 bottom-10 right-0 z-[99] py-4">
+      <div className="h-[calc(100vh-130px)]" style={{ position: 'relative', overflow: 'hidden' }}>
         {isLoading ? (
           <div className="flex items-center justify-center h-full">
             <div className="flex flex-col items-center gap-4">
@@ -117,19 +116,13 @@ export default function HomePage() {
             </div>
           </div>
         ) : (
-          <CircularGallery
+          <ImageTrail
             items={collection}
-            imageWidth={350}      // Lebar image
-            imageHeight={350}     // Tinggi image  
-            imageSpacing={100}     // Jarak antar image (semakin kecil = semakin rapat)
-            bend={0}              // Tingkat lengkungan
-            borderRadius={0.05}   // Sudut membulat
-            showTitles={false}    // Tampilkan/sembunyikan title
-            placeholderImage="https://static.wixstatic.com/media/a5e3bd_4541c740104f4dab8f618d7896859a34~mv2.webp/v1/fill/w_420,h_378,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-i.webp"
+            variant={6}
           />
         )}
-      </div> */}
-    {/* </div> */}
+      </div>
+    </div>
 
     {/* Intergods Tooltip */}
     <div className={`text-nowrap absolute top-20 left-1/2 transform w-[95%] transition-all duration-100 pointer-events-none transform -translate-x-1/2 ${isTooltipActive('intergods') ? 'opacity-100 visible' : 'opacity-0 invisible'
